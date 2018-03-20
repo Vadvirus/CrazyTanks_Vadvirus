@@ -12,8 +12,6 @@ private:
 	int count=0;
 	int X[5], Y[5];
 	int r1, r2;
-	int speed=20;
-	int rightLimit,leftLimit,downLimit;
 	char fig[5][3][3];
 	vector <pair <int, int> > OldCord[5],clear;
 	bool error = 0;

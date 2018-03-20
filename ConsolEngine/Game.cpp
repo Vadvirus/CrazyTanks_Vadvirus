@@ -132,9 +132,11 @@ void Game::DispBullets(int numb)
 		
 		
 		if (GetChar(a, b) != ' ')
-		{
+		{	
+			if (GetChar(a, b) == 'G') { health = 0, death[0] = true; return; }
 			if (GetChar(a, b) != '1')
 					DestroyTank(a, b, bullet[i].my);
+			else if (a != 0 && a != 30 && b!=0 && b!=21) SetChar(a, b, L' ');
 			bullet.erase(bullet.begin() + i);
 		}
 		else
@@ -219,7 +221,24 @@ Game::Game() : Parent(100, 80)
 		SetChar(i, 10, L'1');
 		SetChar(i, 11, L'1');
 	}
-	for (int i = 4; i < 18; i++) SetChar(25, i, L'1');
+	for (int i = 9; i < 14; i++)
+	{
+		SetChar(25, i, L'1');
+		SetChar(26, i, L'1');
+	}
+	SetChar(27, 10, L'1');
+	SetChar(28, 10, L'1');
+	SetChar(29, 10, L'1');
+	SetChar(27, 9, L'1');
+	SetChar(28, 9, L'1');
+	SetChar(29, 9, L'1');
+	SetChar(28, 11, L'G');
+	SetChar(27, 12, L'1');
+	SetChar(28, 12, L'1');
+	SetChar(29, 12, L'1');
+	SetChar(27, 13, L'1');
+	SetChar(28, 13, L'1');
+	SetChar(29, 13, L'1');
 	for (int i = 0; i <= 4; i++) 
 	{	
 		X[i] = rand() % 21;
