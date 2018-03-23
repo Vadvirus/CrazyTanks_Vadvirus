@@ -8,24 +8,24 @@ class Game : public BaseApp
 
 private:
 	string pos[5];
-	int health = 3;
-	int count=0;
-	int X[5], Y[5];
-	int r1, r2;
-	char fig[5][3][3];
-	vector <pair <int, int> > OldCord[5],clear;
-	bool error = 0;
-	bool restart = 0;
+	int health_ = 3;
+	int count_ = 0;
+	int X_[5], Y_[5];
+	int r1_, r2_;
+	char fig_[5][3][3];
+	vector <pair <int, int> > OldCord_[5],clear_;
+	bool error_ = 0;
+	bool restart_ = 0;
 	struct MyStruct
 	{
 		int XX, YY;
 		string kyda;
 		bool my;
 	};
-	bool death[5];
-	int kil = 0;
-	vector < pair <int, int> > del;
-	vector <MyStruct> bullet;
+	bool death_[5];
+	int kil_ = 0;
+	vector < pair <int, int> > del_;
+	vector <MyStruct> bullet_;
 public:
 	Game();
 	bool Game::IsGood(int XX,int YY);
