@@ -201,7 +201,7 @@ bool Game::IsGood(int XX,int YY)
 Game::Game() : Parent(100, 80)
 {
 	
-	//Рисуем поле
+	// Draw the field
 	for (int i = 0; i <= 21; i++)
 	{
 		SetChar(0, i, L'1');
@@ -313,22 +313,26 @@ void Game::KeyPressed(int btnCode)
 	{	
 		
 		int g = getch();
-		if (g == 80) //стрелка вниз
+		if (g == 80) //arrow to down
+
 		{
 			ChangeFig("down",0);
 			if (Good("down",0)) Y[0] += 1;
 		}
-		else if (g == 75) //стрелка влево
+		else if (g == 75) //arrow to left
+
 		{
 			ChangeFig("left",0);
 			if (Good("left",0)) X[0] -= 1;
 		}
-		else if (g == 77)//стрелка вправо
+		else if (g == 77)//arrow to right
+Г®
 		{
 			ChangeFig("right",0);
 			if (Good("right",0)) X[0] += 1;
 		}
-		else if (g == 72)//стрелка вверх
+		else if (g == 72)//arrow to up
+
 		{
 			ChangeFig("up",0);
 			if (Good("up",0)) Y[0] -= 1;
