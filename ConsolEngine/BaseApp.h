@@ -21,27 +21,27 @@ private:
 	void Render();
 
 public:
-	//размеры области вывода по горизонтали и вертикали в символах
+	// the size of the output area horizontally and vertically in the characters
 	const int X_SIZE;
 	const int Y_SIZE;
 
-	//аргументами €вл€ютс€ размеры области вывода по горизонтали и вертикали в символах
+	// arguments are the sizes of the output area horizontally and vertically in the symbols
 	BaseApp(int xSize=100, int ySize=80);
 	virtual ~BaseApp();
 
-	//запускает игровой цикл
+	// runs the game loop
 	void Run();
 
-	//можно заполнить x,y-символ экрана определенным символом, или считать его
+	// you can fill the x, y-character of the screen with a specific character, or read it
 	void SetChar(int x, int y, wchar_t c);
 	wchar_t GetChar(int x, int y);
 
-	/*эта функци€ вызываетс€ каждую игровую итерацию, еЄ можно переопределить, в наследнике класса.
-	в неЄ приходит deltaTime - разница во времени между предыдущей итерацией и этой, в секундах*/
+	/ * this function is called every game iteration, it can be redefined, in the class heir.
+deltaTime arrives in it - the time difference between the previous iteration and this, in seconds * /
 	virtual void UpdateF (float deltaTime){}
-	/*эта функци€ вызываетс€ при нажатии клавиши на клавиатуре, в неЄ приходит код клавиши - btnCode.
-	если использовать стрелки или функциональные клавиши, то придет общее дл€ них число, например 224, а следующее за ним - 
-	будет уже непосредственно код самой клавиши, его можно получить, вызвав метод getch().
-	ћетод KeyPressed так же можно переопределить в наследнике*/
+	/ * this function is called when a key is pressed on the keyboard, the key code comes to it - btnCode.
+if you use arrows or function keys, then there will come a common number for them, for example 224, and the next after it -
+the code of the key itself will already be directly, it can be obtained by calling the getch () method.
+The KeyPressed method can also be redefined in the successor * /
 	virtual void KeyPressed (int btnCode){}
 };
