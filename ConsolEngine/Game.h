@@ -19,7 +19,7 @@ private:
 	struct MyStruct
 	{
 		int XX, YY;
-		string kyda;
+		string direction;
 		bool my;
 	};
 	bool death_[5];
